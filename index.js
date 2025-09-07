@@ -40,13 +40,15 @@ for (let i = lastChar; i >= 0; i--) {
 console.log(newName);
 //---//
 
-if (hacker1 > hacker2) {
-    console.log( `The driver's name goes first`);
-}
-else if (hacker1 < hacker2) {
-    console.log(` Yo, the navigator goes first, definitely.`);
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
 
+const result = hacker1.localeCompare(hacker2);
+
+if (result < 0) {
+  console.log("The driver's name goes first.");
+} else if (result > 0) {
+  console.log("Yo, the navigator goes first, definitely.");
+} else {
+  console.log("What?! You both have the same name?");
 }
-else {
-   console.log(`What?! You both have the same name?`)
-}
+
